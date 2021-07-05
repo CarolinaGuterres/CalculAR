@@ -1,0 +1,82 @@
+import java.util.Scanner;
+public class CalculAR{
+ public static void main (String[] args) {
+  Scanner sc = new Scanner(System.in);
+  double M, L, C, lum=0, W;
+  int amb, pes, eq, pc, comp, otr, compc, otrc;
+  System.out.println("Bem vindo ao calc-AR, preencha os campos pedidos!");
+  System.out.println("Digite {1} para Escritório,  {2} para  Loja, {3} para Residencia, {4} para Restaurante, {5} para Auditorios e {6} para Hoteis.");
+  amb = Integer.parseInt(sc.nextLine());
+  System.out.println("Especifique a largura do ambiente");
+  L = Double.parseDouble(sc.nextLine());
+  System.out.println("Especifique a comprimento do ambiente");
+  C = Double.parseDouble(sc.nextLine());
+  M = C*L;
+  System.out.println("Quantas pessoas frenquentam o ambiente?");
+  pes = Integer.parseInt(sc.nextLine());
+  pc = pes*140;
+  System.out.println("Quantos COMPUTADORES tem no ambiente?");
+  comp = Integer.parseInt(sc.nextLine());
+  compc = 75*comp;
+  System.out.println("Quantos equipamentos, exceto computadores, tem no ambiente?");
+  otr = Integer.parseInt(sc.nextLine());
+  otrc = otr*160;
+  eq = otrc+compc;
+  if (amb==1) {
+   lum = 16*M;
+  }else {
+     if (amb==2) {
+      lum=28*M;
+     }else {
+        if (amb==3) {
+         lum=30*M;
+        }else  {        
+           if (amb==4) {
+            lum=41*M;
+           }else  {
+              if (amb==5) {
+               lum=32*M;
+              }else  {
+                 if (amb==6) {
+                  lum=30*M;
+                 }
+              }
+           }
+        }
+     }
+  }
+  W = lum+pc+eq;
+  System.out.println("Carga térmica total do ambiente:" + W +"Cal");
+  if (W<=950 || M<=5) {
+   System.out.println(" Você precisa de uma unidade de refrigeração de 7500 BTUs");
+  }else {
+     if (W<=1150 || M<=6) {
+      System.out.println(" Você precisa de uma unidade de refrigeração de 10000 BTUs");
+     }else {
+        if (W<=1350 || M<=7) {
+         System.out.println(" Você precisa de uma unidade de refrigeração de 12000 BTUs");
+        }else  {        
+           if (W<=1850 || M<=9) {
+            System.out.println(" Você precisa de uma unidade de refrigeração de 15000 BTUs");
+           }else  {
+              if (W<=2000 || M<=10) {
+               System.out.println(" Você precisa de uma unidade de refrigeração de 18000 BTUs");
+              }else  {
+                 if (W<=2650 || M<=13) {
+                  System.out.println(" Você precisa de uma unidade de refrigeração de 21000 BTUs");
+		 }else  {
+                    if (W<=3150 || M<=15) {
+                     System.out.println(" Você precisa de uma unidade de refrigeração de 24000 BTUs");
+                    }else  {
+                       if (W<=3800 || M<=19) {
+                        System.out.println(" Você precisa de uma unidade de refrigeração de 30000 BTUs");
+             	       }
+                    }
+   		 }
+              }
+           }
+        }
+     }
+  }
+ }
+}
